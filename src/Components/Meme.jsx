@@ -3,8 +3,9 @@ import file from '../assets/memesData';
 function Meme () {
 
   const getRandomMeme = () => {
-    let num = Math.floor(Math.random() * 100) + 1;
-    console.log(file.data.memes[num].url);
+    const memesArray = file.data.memes;
+    let num = Math.floor(Math.random() * memesArray.length);
+    console.log(memesArray[num].url);
   }
 
   return (
