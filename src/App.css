@@ -19,12 +19,36 @@ body {
   width: 32px;
 }
 
-.title {
-  font-size: 1.25rem;
-}
-
 .subtitle {
   margin-left: auto;
-  font-size: 0.75rem;
   font-weight: 500;
+}
+
+main {
+  padding: 36px;
+}
+
+.form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+}
+
+.input {
+  font-family: 'Karla', sans-serif;
+  text-indent: 5px;
+  border-radius: 5px;
+  border: 1px solid #D5D4D8;
+}
+
+.button {
+  grid-column: 1 / 3;
+  background:linear-gradient(45deg, #672280, #A626D3);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: 'Karla', sans-serif;
+  border-radius: 5px;
 }
