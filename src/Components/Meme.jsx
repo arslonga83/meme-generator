@@ -9,7 +9,7 @@ function Meme () {
     const memesArray = file.data.memes;
     let num = Math.floor(Math.random() * memesArray.length);
     console.log(memesArray[num].url);
-    setMemeUrl(prevUrl => memesArray[num].url)
+    setMemeUrl(memesArray[num].url)
   }
 
   return (
@@ -22,7 +22,7 @@ function Meme () {
             onClick={getRandomMeme}
             >Get a new meme image</button>
       </div>
-      <img src={memeUrl}/>
+      <img src={memeUrl} className='memeImage'/>
     </main>
   )
 }

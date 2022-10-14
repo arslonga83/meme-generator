@@ -52,3 +52,10 @@ main {
   font-family: 'Karla', sans-serif;
   border-radius: 5px;
 }
+
+.memeImage {
+  min-width: 100%;
+  padding-top: 24px;
+  border-radius: 5px;
+  
+}
