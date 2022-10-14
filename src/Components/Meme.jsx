@@ -1,11 +1,15 @@
-import file from '../assets/memesData';
+import file from '../assets/memesData'
+import React from 'react'
 
 function Meme () {
+
+  const [memeUrl, setMemeUrl] = React.useState('');
 
   const getRandomMeme = () => {
     const memesArray = file.data.memes;
     let num = Math.floor(Math.random() * memesArray.length);
     console.log(memesArray[num].url);
+    setMemeUrl(prevUrl => memesArray[num].url)
   }
 
   return (
@@ -18,6 +22,7 @@ function Meme () {
             onClick={getRandomMeme}
             >Get a new meme image</button>
       </div>
+      <img src={memeUrl}/>
     </main>
   )
 }
