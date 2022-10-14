@@ -3,13 +3,26 @@ import React from 'react'
 
 function Meme () {
 
-  const [memeUrl, setMemeUrl] = React.useState('');
+  // const [memeUrl, setMemeUrl] = React.useState('');
+  const [meme, setMeme] = React.useState({
+    topText: '',
+    bottomText: '',
+    randomImage: ''
+  })
+
+  const [allMemeImages, setAllMemeImages] = React.useState(file)
 
   const getRandomMeme = () => {
-    const memesArray = file.data.memes;
+    const memesArray = allMemeImages.data.memes;
     let num = Math.floor(Math.random() * memesArray.length);
     console.log(memesArray[num].url);
-    setMemeUrl(memesArray[num].url)
+    setMeme(prev => {
+      return {
+        ...prev,
+        randomImage: memesArray[num].url
+      }
+    }
+    )
   }
 
   return (
@@ -22,7 +35,7 @@ function Meme () {
             onClick={getRandomMeme}
             >Get a new meme image</button>
       </div>
-      <img src={memeUrl} className='memeImage'/>
+      <img src={meme.randomImage} className='memeImage'/>
     </main>
   )
 }
