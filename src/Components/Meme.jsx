@@ -1,4 +1,3 @@
-import file from '../assets/memesData'
 import React from 'react'
 
 function Meme () {
@@ -8,7 +7,13 @@ function Meme () {
     randomImage: ''
   })
 
-  const [allMemeImages, setAllMemeImages] = React.useState(file)
+  const [allMemeImages, setAllMemeImages] = React.useState([])
+
+  React.useEffect(() => {
+    fetch('https://api.imgflip.com/get_memes')
+      .then((response) => response.json())
+      .then((data) => setAllMemeImages(data))
+  })
 
   const getRandomMeme = () => {
     const memesArray = allMemeImages.data.memes;
