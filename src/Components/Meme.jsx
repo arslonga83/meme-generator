@@ -2,8 +2,6 @@ import file from '../assets/memesData'
 import React from 'react'
 
 function Meme () {
-
-  // const [memeUrl, setMemeUrl] = React.useState('');
   const [meme, setMeme] = React.useState({
     topText: '',
     bottomText: '',
@@ -25,17 +23,28 @@ function Meme () {
     )
   }
 
+  const handleChange = (event) => {
+    setMeme(prev => ({
+      ...prev, 
+      [event.target.name]: event.target.value
+    }))
+  } 
+
   return (
     <main>
       <div className='form'>
-          <input type='text' placeholder='top text' className='input'/>
-          <input type='text' placeholder='bottom text' className='input'/>
+          <input type='text' placeholder='top text' className='input' name='topText' value={meme.topText} onChange={handleChange}/>
+          <input type='text' placeholder='bottom text' className='input' name='bottomText' value={meme.bottomText} onChange={handleChange}/>
           <button 
             className='button'
             onClick={getRandomMeme}
             >Get a new meme image</button>
       </div>
-      <img src={meme.randomImage} className='memeImage'/>
+      <div className='meme'>
+        <img src={meme.randomImage} className='memeImage'/>
+        <h2 className='text top'>{meme.topText}</h2>
+        <h2 className='text bottom'>{meme.bottomText}</h2>
+      </div>
     </main>
   )
 }
