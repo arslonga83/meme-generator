@@ -26,12 +26,17 @@ body {
 
 main {
   padding: 36px;
+  display: grid;
+  justify-content: center;
+  gap: 24px;
 }
 
 .form {
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap: 17px;
+  max-width: 750px;
+  margin:auto;
 }
 
 .input {
@@ -60,8 +65,11 @@ main {
 }
 
 .memeImage {
-  max-width: 100%;
+  max-width: 750px;
   border-radius: 3px;
+  display: grid;
+  justify-content: center;
+  max-width: 500px;
 }
 
 .text {
